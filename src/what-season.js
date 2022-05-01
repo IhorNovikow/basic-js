@@ -12,26 +12,21 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
-  throw new NotImplementedError('Not implemented');
- /* try {
-    if(typeof(date)=='function'){
-      return(false)
-    }else if(date==''){
-      return ('Unable to determine the time of year!')
-    }
-    if(date=='winter'){return ('winter')}
-    if(date=='spring'){return ('spring')}
-    if(date=='summer'){return ('summer')}
-    if(date=='autumn'){return ('autumn')}
-    let c=date.getMonth()
-   console.log(c)
-    if(0 <= c  && c < 2 || c==11){return('winter')
-    }else if(2 <= c && c < 5){return('spring')
-    }else if(5 <= c && c < 8){return('summer')
-    }else if(8 <= c && c < 10){return('autumn')}     
-    } catch {
-    return('Invalid date!')
-    }*/
+  //throw new NotImplementedError('Not implemented');
+
+if(date==undefined){
+ return('Unable to determine the time of year!')
+}
+if (date.toString !== Date.prototype.toString){ throw new Error("Invalid date!")}
+try{
+let c = date.getMonth() 
+if((0 <= c  && c < 2) || c == 11){return('winter')
+}else if(2 <= c && c < 5){return('spring')
+}else if(5 <= c && c < 8){return('summer')
+}else if(8 <= c && c < 11){return('autumn')}
+}catch{
+  throw new Error('Invalid date!')
+}
 
 }
 
