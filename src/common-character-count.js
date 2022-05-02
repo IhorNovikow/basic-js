@@ -13,19 +13,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getCommonCharacterCount(s1, s2) {
   //throw new NotImplementedError('Not implemented');
-  let a = []
+  let arr = []
   let i = 0
   if (s1.length == 0 || s2.length == 0) {
-    return 0
+    return (0)
   } else {
     while (i < s1.length) {
       if (s2.indexOf(s1[i]) != -1){
         s2 = s2.replace(s1[i], '')
-        a.push(s1[i])
+        arr.push(s1[i])
       }
       i++
     }
-    return a.length
+    return arr.length
   }
 }
 

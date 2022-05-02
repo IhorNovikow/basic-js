@@ -15,16 +15,16 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getSumOfDigits(n) {
   //throw new NotImplementedError('Not implemented');
   if (n.toString().length == 1){
-    return n
+    return (n)
   }
   else if (n.toString().length > 1) {
     do{
       n = n.toString().split('')
       n = n.reduce(function(sum, elem) {
-      return sum + (+elem);
+      return (sum + (+elem));
       }, 0);
     } while (n.toString().length > 1)
-    return n
+    return (n)
   }
 }
 

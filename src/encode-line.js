@@ -12,15 +12,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function encodeLine(str) {
   //throw new NotImplementedError('Not implemented');
-  let b = []
+  let a = []
   for (let i = 0; i < str.length; i++){
   let k = 1
     for(let j = i + 1; j <= str.length; j++){
       if(str[i] != str[j]){  
         if (k == 1){
-          b.push(str[i])
+          a.push(str[i])
         } else {
-          b.push(k, str[i])
+          a.push(k, str[i])
         }
         i = j - 1
         break
@@ -28,7 +28,7 @@ function encodeLine(str) {
       k = k + 1
     }   
   }
-  return b.join('')
+  return a.join('')
 }
 
 module.exports = {

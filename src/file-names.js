@@ -17,30 +17,30 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 //throw new NotImplementedError('Not implemented');
 function renameFiles(names) {
-  let rename = [names[0]]
-  let rename2 = [rename[0]]
+  let reName = [names[0]]
+  let reName2 = [reName[0]]
   let a = []
   let b =[]
   if (names.length == 0){
-    return names
+    return (names)
   } else {
     for (let i = 1; i < names.length; i++){
       a.push(names.slice(0, i).filter(item => item === names[i]))
       if (a[i-1].length == 0) {
-        rename.push(names[i])
+        reName.push(names[i])
       } else {
-        rename.push(`${names[i]}(${a[i-1].length})`)
+        reName.push(`${names[i]}(${a[i-1].length})`)
       }
     }
-    for (let i = 1; i < rename.length; i++){
-      b.push(rename.slice(0, i).filter(item => item === rename[i]))
+    for (let i = 1; i < reName.length; i++){
+      b.push(reName.slice(0, i).filter(item => item === reName[i]))
       if (b[i-1].length == 0) {
-        rename2.push(rename[i])
+        reName2.push(reName[i])
       } else {
-        rename2.push(`${rename[i]}(${b[i-1].length})`)
+        reName2.push(`${reName[i]}(${b[i-1].length})`)
       }
     }
-    return rename2
+    return (reName2)
   }
 }
 

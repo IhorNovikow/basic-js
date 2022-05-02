@@ -18,14 +18,14 @@ function isMAC48Address(n) {
   //throw new NotImplementedError('Not implemented');
   n = n.replace(/-/g, ' ').replace(/[G-Z]/gi, '!').split(' ')
   if (n.length != 6){
-    return false
+    return (false)
   } else {
     for (let i = 0; i < n.length; i++){
       if (n[i].length > 2 || n[i][0] == '!' || n[i][1] == '!'){
-        return false
+        return (false)
       }
     }
-    return true
+    return (true)
   }
   }
 module.exports = {

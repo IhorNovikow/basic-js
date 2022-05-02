@@ -14,16 +14,16 @@ const { NotImplementedError } = require('../extensions/index.js');
 function sortByHeight(arr) {
   //throw new NotImplementedError('Not implemented');
   let j = 0
-  let emp = []
+  let arrArr = []
   arr.forEach((el) => {
     if (el != -1){
-      emp.push(el)
+      arrArr.push(el)
     }
   })
-  emp = emp.sort((a, b) => a - b)
+  arrArr = arrArr.sort((a, b) => a - b)
   for (let i = 0; i < arr.length; i++){
     if (arr[i] != -1){
-      arr[i] = emp[j]
+      arr[i] = arrArr[j]
       j++
     }
   }
